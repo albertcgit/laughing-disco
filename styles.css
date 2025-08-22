@@ -1,0 +1,378 @@
+/* styles.css */
+
+/* Reset some default styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    background: #1976d2;
+    color: #fff;
+    padding: 24px 0 12px 0;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+
+header h1 {
+    font-size: 2.2em;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+/* Navigation styles */
+nav[role="navigation"] {
+    background: #1565c0;
+    padding: 10px 0;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    outline: none;
+}
+
+nav a:hover,
+nav a:focus {
+    background: #42a5f5;
+    color: #222;
+    outline: 2px solid #ffeb3b;
+}
+
+/* Main content styles */
+article[role="main"] {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Section styles */
+section {
+    margin-bottom: 32px;
+    background: #f5f5f5;
+    padding: 1.5em;
+    border-radius: 8px;
+}
+
+/* Headings */
+h2 {
+    color: #1a237e;
+    margin-bottom: 12px;
+}
+
+h3 {
+    color: #1976d2;
+    margin: 12px 0 8px 0;
+}
+
+/* Projects section */
+/* Projects section card-like layout */
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.projects-list article {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 260px;
+    box-shadow: 0 4px 16px rgba(26, 35, 126, 0.08);
+    padding: 1.5em 1em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+
+.projects-list article:hover,
+.projects-list article:focus-within {
+    box-shadow: 0 8px 24px rgba(25, 118, 210, 0.15);
+    border-color: #1976d2;
+}
+
+.projects-list figure {
+    margin-bottom: 1em;
+}
+
+.projects-list img {
+    max-width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 0.5em;
+}
+
+.projects-list h3 {
+    margin: 0.5em 0 0.3em 0;
+    color: #1976d2;
+    font-size: 1.2em;
+}
+
+.projects-list p {
+    color: #444;
+    font-size: 1em;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* Skills list */
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 0;
+    list-style: none;
+}
+
+#skills li {
+    background: #e3f2fd;
+    color: #1a237e;
+    padding: 0.5em 1em 0.5em 2em; /* extra left padding for icon */
+    border-radius: 4px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 0.5em;
+}
+
+/* Add icons using ::before pseudo-class */
+#skills li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0.7em;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #1976d2;
+    pointer-events: none;
+}
+
+/* Contact form */
+form label {
+    color: #1a237e;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.2em;
+    margin-bottom: 1em;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+    background: #fff;
+    color: #222;
+    font-size: 1em;
+}
+
+form button {
+    background: #1a237e;
+    color: #fff;
+    border: none;
+    padding: 0.7em 1.5em;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+form button:focus,
+form button:hover {
+    background: #3949ab;
+    outline: 2px solid #ffeb3b;
+}
+
+/* Footer styles */
+footer[role="contentinfo"] {
+    text-align: center;
+    padding: 16px 0;
+    background: #1a237e;
+    color: #fff;
+    margin-top: 40px;
+    border-radius: 0 0 8px 8px;
+    font-size: 0.9em;
+}
+
+/* Vendor prefixes for cross-browser compatibility */
+
+/* Flexbox with prefixes */
+.projects-list,
+nav ul,
+#skills ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    gap: 2em;
+}
+
+/* Responsive images and videos */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Border radius with prefixes */
+header,
+section,
+.projects-list article,
+form input,
+form textarea,
+form button,
+footer[role="contentinfo"] {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+/* Box-shadow with prefixes */
+header,
+.projects-list article,
+article[role="main"] {
+    -webkit-box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+
+/* Transition with prefixes */
+nav a,
+form button,
+.projects-list article {
+    -webkit-transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+/* Hamburger menu (flex) */
+.hamburger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+/* Media queries with vendor prefixes for flex-direction */
+@media (max-width: 768px) {
+    .projects-list,
+    nav ul,
+    #skills ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 1.5em;
+        align-items: center;
+    }
+    article[role="main"] {
+        padding: 12px;
+    }
+}
+
+/* Media query for screens 768px and below */
+@media (max-width: 768px) {
+    header {
+        padding: 16px 0 8px 0;
+    }
+
+    nav[role="navigation"] ul {
+        flex-direction: column;
+        gap: 0;
+        background: #1565c0;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        display: none;
+        z-index: 1000;
+    }
+
+    nav[role="navigation"].open ul {
+        display: flex;
+    }
+
+    nav[role="navigation"] li {
+        text-align: center;
+        padding: 16px 0;
+        border-bottom: 1px solid #1976d2;
+    }
+
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 24px;
+        top: 18px;
+        z-index: 1100;
+    }
+
+    /* Adjust projects layout for mobile */
+    .projects-list {
+        flex-direction: column;
+        gap: 1.5em;
+        align-items: center;
+    }
+
+    article[role="main"] {
+        padding: 12px;
+    }
+}
+
+/* Optional: Hide nav overflow on mobile */
+@media (max-width: 768px) {
+    nav[role="navigation"] {
+        position: relative;
+        min-height: 56px;
+    }
+}
